@@ -37,7 +37,7 @@ func (h *Human) Guzzle(beerStein string) {
 
 // SayHi Employee 重载 Human 的 Sayhi 方法
 func (e *Employee) SayHi() {
-	fmt.Printf("Hi, I am %s, I work at %s. Call me on %s\n", e.name, e.company, e.phone) //此句可以分成多行
+	fmt.Printf("Hi, I am %s, I work at %s. Call me on %s\n", e.name, e.company, e.phone)
 }
 
 // BorrowMoney Student 实现 BorrowMoney 方法
