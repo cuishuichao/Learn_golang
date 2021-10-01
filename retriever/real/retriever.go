@@ -23,6 +23,5 @@ func (r *Retriever) Get(url string) string {
 	if err != nil {
 		panic(err)
 	}
-
 	return string(result)
 }

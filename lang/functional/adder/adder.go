@@ -9,7 +9,7 @@ func adder() func(int) int{
 		return sum
 	}
 }
-
+// 正统函数式编程
 type iAdder func(int) (int, iAdder)
 
 func adder2(base int) iAdder{
