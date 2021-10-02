@@ -16,7 +16,7 @@ func readMaze(filename string) [][]int {
 
 	maze := make([][]int, row)
 	for i := range maze{
-		maze[i] = make([]int, row)
+		maze[i] = make([]int, col)
 		for j := range maze[i]{
 			fmt.Fscanf(file, "%d", &maze[i][j])
 		}
@@ -94,12 +94,12 @@ func walk(maze [][]int, start, end point) [][]int {
 func main() {
 	maze := readMaze("maze/maze.in")
 	fmt.Println(maze)
-	steps := walk(maze, point{0,0}, point{len(maze)-1, len(maze[0])-1})
-
-	for _, row := range steps {
-		for _, val := range row {
-			fmt.Printf("%3d", val)
-		}
-		fmt.Println()
-	}
+	//steps := walk(maze, point{0,0}, point{len(maze)-1, len(maze[0])-1})
+	//
+	//for _, row := range steps {
+	//	for _, val := range row {
+	//		fmt.Printf("%3d", val)
+	//	}
+	//	fmt.Println()
+	//}
 }
