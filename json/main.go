@@ -18,8 +18,8 @@ type Order struct {
 }
 
 func main() {
-	//marshal()
-	//unmarshal()
+	marshal()
+	unmarshal()
 	parseNLP()
 }
 
@@ -82,8 +82,8 @@ func parseNLP() {
 			}`
 m := struct{
 	Data []struct {
-		Synonym string
-		Tag string
+		Synonym string `json:"synonym"`
+		Tag string `json:"tag"`
 	} `json:"data"`
 	}{}
 	err := json.Unmarshal([]byte(res), &m)
