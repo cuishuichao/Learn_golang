@@ -43,8 +43,7 @@ func session(s RetrieversPoster) string {
 func main() {
 	var r Retriever
 
-	mockRetriever := mock.Retriever{
-		Contents: "this is a fake imooc.com"}
+	mockRetriever := mock.Retriever{Contents: "this is a fake imooc.com"}
 	r = &mockRetriever
 	inspect(r)
 
