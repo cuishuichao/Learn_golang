@@ -18,8 +18,9 @@ type Order struct {
 }
 
 func main() {
-	marshal()
-	unmarshal()
+	//marshal()
+	//unmarshal()
+	parseNLP()
 }
 
 func unmarshal() {
@@ -57,5 +58,37 @@ func marshal() {
 }
 
 func parseNLP() {
-
+	res := `{
+				"data": [
+					{
+						"synonym": "",
+						"weight": "0.6",
+						"word": "真丝",
+						"tag": "材质"
+					},
+					{
+						"synonym": "",
+						"weight": "0.8",
+						"word": "韩都衣舍",
+						"tag": "品牌"
+					},
+					{
+						"synonym": "连身裙;联衣裙",
+						"weight": "1.0",
+						"word": "连衣裙",
+						"tag": "品类"
+					}
+				]
+			}`
+m := struct{
+	Data []struct {
+		Synonym string
+		Tag string
+	} `json:"data"`
+	}{}
+	err := json.Unmarshal([]byte(res), &m)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("%+v, %+v\n", m.Data[2].Synonym, m.Data[2].Tag)
 }
