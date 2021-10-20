@@ -80,6 +80,7 @@ func parseNLP() {
 					}
 				]
 			}`
+
 m := struct{
 	Data []struct {
 		Synonym string `json:"synonym"`
